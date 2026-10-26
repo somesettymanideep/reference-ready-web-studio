@@ -31,14 +31,15 @@ export function ScrollToTopButton() {
       return;
     }
 
+    // The negative bottom root margin collapses the observation root to the
+    // viewport's TOP edge, so the observer fires exactly when the section's
+    // top edge crosses the top of the viewport — the "scrolled past" boundary —
+    // in both directions, without any scroll-event listeners.
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        // The section's top edge sits above the viewport top = the user has
-        // scrolled past the start of the section. Scrolling back so the top
-        // edge re-enters from above hides it again.
-        setVisible(entry.boundingClientRect.top < 0);
+      () => {
+        setVisible(target.getBoundingClientRect().top < 0);
       },
-      { threshold: 0 },
+      { threshold: 0, rootMargin: "0px 0px -100% 0px" },
     );
 
     observer.observe(target);
