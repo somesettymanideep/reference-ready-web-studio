@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- The brand mark is the user's official logo lockup, served from the CDN pointer `src/assets/logo-full.png.asset.json`; `BrandLockup` in `src/components/SiteHeader.tsx` renders it alone (no typed wordmark) with a `surface` prop choosing the light or dark treatment. Keep new brand usages going through `BrandLockup` so the logo stays consistent across pages.
+
