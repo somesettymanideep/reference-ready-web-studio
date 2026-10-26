@@ -18,6 +18,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { HeroSlider } from "@/components/HeroSlider";
 import {
   IMAGES,
   SERVICES,
@@ -25,7 +26,6 @@ import {
   PROJECT_CATEGORIES,
   STATS,
 } from "@/data/site";
-import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/svc-commercial.jpg";
 import blueprintImg from "@/assets/cta-blueprint.jpg";
 import strip1 from "@/assets/svc-construction.jpg";
@@ -89,13 +89,9 @@ function Home() {
       <main>
         {/* Hero */}
         <section className="relative flex min-h-[620px] items-center overflow-hidden">
-          <img
-            src={heroImg}
-            alt="Modern residence built by Naidu & Co at dusk"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/75 to-navy-900/25" />
-          <div className="container-x relative py-20">
+          <HeroSlider />
+          <div className="absolute inset-0 z-[2] bg-gradient-to-r from-navy-950/95 via-navy-950/75 to-navy-900/25" />
+          <div className="container-x relative z-[5] py-20">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
               Building Dreams
             </p>
