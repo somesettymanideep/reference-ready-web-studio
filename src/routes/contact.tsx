@@ -14,7 +14,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { PageBanner } from "@/components/PageBanner";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { CONTACT } from "@/data/site";
-import blueprintImg from "@/assets/cta-blueprint.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
