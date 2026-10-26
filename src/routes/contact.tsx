@@ -162,27 +162,6 @@ function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA */}
-        <section className="relative overflow-hidden bg-navy-950 py-16">
-          <img
-            src={blueprintImg}
-            alt=""
-            aria-hidden
-            className="absolute inset-0 h-full w-full object-cover opacity-10"
-          />
-          <div className="container-x relative text-center">
-            <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
-              Have a Project in Mind?
-            </h2>
-            <p className="mx-auto mt-2 max-w-xl text-sm text-white/65 md:text-base">
-              We're here to help. Reach out and let's build it together.
-            </p>
-            <a href="#enquiry" className="btn-gold mt-6">
-              Contact Our Team
-            </a>
-          </div>
-        </section>
       </main>
       <SiteFooter />
     </div>
