@@ -96,7 +96,7 @@ export function HeroSlider() {
       })}
 
       {/* Slide indicators */}
-      <div className="absolute bottom-6 left-1/2 z-[6] flex -translate-x-1/2 items-center gap-3 md:left-auto md:right-8 md:translate-x-0">
+      <div className="absolute bottom-6 left-1/2 z-[6] flex -translate-x-1/2 items-center gap-3 rounded-full bg-navy-950/50 px-3 py-2 backdrop-blur-sm md:left-auto md:right-8 md:translate-x-0">
         {SLIDES.map((slide, i) => (
           <button
             key={slide.src}
