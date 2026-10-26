@@ -82,7 +82,6 @@ export function HeroSlider() {
             style={{
               opacity: isActive ? 1 : 0,
               transitionDuration: `${FADE_DURATION}ms`,
-              zIndex: isActive ? 1 : 0,
             }}
           >
             <img
@@ -97,7 +96,7 @@ export function HeroSlider() {
       })}
 
       {/* Slide indicators */}
-      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 md:left-auto md:right-8 md:translate-x-0">
+      <div className="absolute bottom-6 left-1/2 z-[4] flex -translate-x-1/2 items-center gap-3 md:left-auto md:right-8 md:translate-x-0">
         {SLIDES.map((slide, i) => (
           <button
             key={slide.src}
