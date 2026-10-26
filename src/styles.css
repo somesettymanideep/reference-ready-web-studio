@@ -47,6 +47,10 @@
   --color-gold-dark: var(--gold-dark);
   --color-cream: var(--cream);
   --color-ink: var(--ink);
+  /* Safety palette — ScrollToTopButton */
+  --color-safety-yellow: var(--safety-yellow);
+  --color-safety-yellow-light: var(--safety-yellow-light);
+  --color-safety-black: var(--safety-black);
 
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
@@ -65,6 +69,9 @@
   --gold-dark: oklch(0.62 0.1 80);
   --cream: oklch(0.975 0.008 90);
   --ink: oklch(0.26 0.02 260);
+  --safety-yellow: oklch(0.85 0.17 95);
+  --safety-yellow-light: oklch(0.9 0.15 95);
+  --safety-black: oklch(0.15 0 0);
 
   /* shadcn mapping */
   --background: oklch(1 0 0);

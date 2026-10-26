@@ -291,7 +291,7 @@ function Home() {
         </section>
 
         {/* Why choose us */}
-        <section className="bg-cream py-20">
+        <section id="construction-point-view" className="bg-cream py-20">
           <div className="container-x">
             <p className="kicker">Why Choose Us</p>
             <h2 className="mt-3 font-display text-3xl font-bold text-navy-950 md:text-4xl">
