@@ -28,7 +28,7 @@ const SOCIALS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy-950 text-white">
+    <footer className="border-t-2 border-gold bg-navy-950 text-white">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <BrandLockup />
