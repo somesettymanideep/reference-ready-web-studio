@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logoMark from "@/assets/logo-mark.png";
+import logoAsset from "@/assets/logo-header.png.asset.json";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -43,16 +44,26 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-900/95 shadow-lg shadow-navy-950/30 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 shadow-sm backdrop-blur">
       <div className="container-x flex h-[4.5rem] items-center justify-between gap-4">
-        <BrandLockup />
+        <Link
+          to="/"
+          aria-label="Naidu & Co Private Limited — home"
+          className="flex shrink-0 items-center"
+        >
+          <img
+            src={logoAsset.url}
+            alt="Naidu & Co Private Limited"
+            className="h-12 w-auto"
+          />
+        </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm font-medium text-white/75 transition-colors hover:text-gold"
+              className="text-sm font-medium text-navy-900/70 transition-colors hover:text-gold"
               activeOptions={{ exact: item.to === "/" }}
             >
               {({ isActive }) => (
@@ -77,7 +88,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-navy-900 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
@@ -87,14 +98,14 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-navy-900 lg:hidden">
+        <div className="border-t border-border bg-background lg:hidden">
           <nav className="container-x flex flex-col py-4" aria-label="Mobile">
             {NAV.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="border-b border-white/5 py-3 text-sm font-medium text-white/80 transition-colors hover:text-gold"
+                className="border-b border-border/60 py-3 text-sm font-medium text-navy-900/80 transition-colors hover:text-gold"
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {({ isActive }) => (
