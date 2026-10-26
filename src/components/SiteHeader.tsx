@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoMark from "@/assets/logo-mark.png";
+import logoFull from "@/assets/logo-full.png.asset.json";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -11,30 +11,30 @@ const NAV = [
   { label: "Contact", to: "/contact" },
 ] as const;
 
-export function BrandLockup({ size = "sm" }: { size?: "sm" | "lg" }) {
+export function BrandLockup({
+  size = "sm",
+  surface = "dark",
+}: {
+  size?: "sm" | "lg";
+  surface?: "dark" | "light";
+}) {
+  const img = (
+    <img
+      src={logoFull.url}
+      alt="Naidu & Co Private Limited"
+      className={`${size === "sm" ? "h-11" : "h-20"} w-auto`}
+    />
+  );
+
   return (
-    <Link to="/" className="flex shrink-0 items-center gap-3">
-      <img
-        src={logoMark}
-        alt="Naidu & Co Private Limited"
-        className={size === "sm" ? "h-11 w-auto" : "h-16 w-auto"}
-      />
-      <span className="flex flex-col leading-none">
-        <span
-          className={`font-display font-bold tracking-wide text-white ${
-            size === "sm" ? "text-lg" : "text-2xl"
-          }`}
-        >
-          NAIDU <span className="text-gold">&amp;</span> CO
+    <Link to="/" className="flex shrink-0 items-center">
+      {surface === "dark" ? (
+        <span className="rounded-lg bg-white px-3 py-1 ring-1 ring-white/20">
+          {img}
         </span>
-        <span
-          className={`mt-1 font-sans font-semibold uppercase tracking-[0.35em] text-gold ${
-            size === "sm" ? "text-[0.55rem]" : "text-[0.7rem]"
-          }`}
-        >
-          Private Limited
-        </span>
-      </span>
+      ) : (
+        img
+      )}
     </Link>
   );
 }
