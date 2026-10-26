@@ -33,9 +33,10 @@ export function ScrollToTopButton() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Not intersecting + top edge above the viewport = user has scrolled
-        // past the section. Not intersecting + top edge below = not reached yet.
-        setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+        // The section's top edge sits above the viewport top = the user has
+        // scrolled past the start of the section. Scrolling back so the top
+        // edge re-enters from above hides it again.
+        setVisible(entry.boundingClientRect.top < 0);
       },
       { threshold: 0 },
     );
