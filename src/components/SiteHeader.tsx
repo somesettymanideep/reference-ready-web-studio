@@ -11,16 +11,7 @@ const NAV = [
   { label: "Contact", to: "/contact" },
 ] as const;
 
-export function BrandLockup({
-  size = "sm",
-  tone = "light",
-}: {
-  size?: "sm" | "lg";
-  tone?: "light" | "dark";
-}) {
-  const nameColor = tone === "light" ? "text-white" : "text-navy-950";
-  const accentColor = tone === "light" ? "text-gold" : "text-gold-dark";
-
+export function BrandLockup({ size = "sm" }: { size?: "sm" | "lg" }) {
   return (
     <Link to="/" className="flex shrink-0 items-center gap-3">
       <img
@@ -30,14 +21,14 @@ export function BrandLockup({
       />
       <span className="flex flex-col leading-none">
         <span
-          className={`font-display font-bold tracking-wide ${nameColor} ${
+          className={`font-display font-bold tracking-wide text-white ${
             size === "sm" ? "text-lg" : "text-2xl"
           }`}
         >
-          NAIDU <span className={accentColor}>&amp;</span> CO
+          NAIDU <span className="text-gold">&amp;</span> CO
         </span>
         <span
-          className={`mt-1 font-sans font-semibold uppercase tracking-[0.35em] ${accentColor} ${
+          className={`mt-1 font-sans font-semibold uppercase tracking-[0.35em] text-gold ${
             size === "sm" ? "text-[0.55rem]" : "text-[0.7rem]"
           }`}
         >
