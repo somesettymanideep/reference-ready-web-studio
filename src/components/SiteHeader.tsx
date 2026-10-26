@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoLockup from "@/assets/logo.png";
+import logoMark from "@/assets/logo-mark.png";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -11,27 +11,29 @@ const NAV = [
   { label: "Contact", to: "/contact" },
 ] as const;
 
-/** Official logo lockup, straight onto the surface behind it. */
-export function BrandLogo({ className }: { className?: string }) {
-  return (
-    <img
-      src={logoLockup}
-      alt="Naidu & Co Private Limited"
-      className={className ?? "h-11 w-auto"}
-    />
-  );
-}
-
-/** Official logo lockup on a white chip with a gold border (for navy surfaces). */
 export function BrandLockup({ size = "sm" }: { size?: "sm" | "lg" }) {
   return (
-    <Link to="/" className="flex shrink-0 items-center" aria-label="Naidu & Co Private Limited — home">
-      <span
-        className={`flex items-center justify-center rounded-lg border-gold bg-white ${
-          size === "sm" ? "border-[7px] px-2 py-1" : "border-[10px] px-3 py-2"
-        }`}
-      >
-        <BrandLogo className={size === "sm" ? "h-[3.35rem] w-auto" : "h-[4.75rem] w-auto"} />
+    <Link to="/" className="flex shrink-0 items-center gap-3">
+      <img
+        src={logoMark}
+        alt="Naidu & Co Private Limited"
+        className={size === "sm" ? "h-11 w-auto" : "h-16 w-auto"}
+      />
+      <span className="flex flex-col leading-none">
+        <span
+          className={`font-display font-bold tracking-wide text-white ${
+            size === "sm" ? "text-lg" : "text-2xl"
+          }`}
+        >
+          NAIDU <span className="text-gold">&amp;</span> CO
+        </span>
+        <span
+          className={`mt-1 font-sans font-semibold uppercase tracking-[0.35em] text-gold ${
+            size === "sm" ? "text-[0.55rem]" : "text-[0.7rem]"
+          }`}
+        >
+          Private Limited
+        </span>
       </span>
     </Link>
   );
@@ -42,7 +44,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-900/95 shadow-lg shadow-navy-950/30 backdrop-blur">
-      <div className="container-x flex h-[5.5rem] items-center justify-between gap-4">
+      <div className="container-x flex h-[4.5rem] items-center justify-between gap-4">
         <BrandLockup />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
