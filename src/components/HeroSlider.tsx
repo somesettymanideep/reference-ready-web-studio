@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import highwaySlide from "@/assets/hero-slide-highway.jpg.asset.json";
-import plansSlide from "@/assets/hero-slide-plans.jpg.asset.json";
-import skylineSlide from "@/assets/hero-slide-skyline.jpg.asset.json";
+import highwaySlide from "@/assets/hero-slide-highway.jpg";
+import plansSlide from "@/assets/hero-slide-plans.jpg";
+import skylineSlide from "@/assets/hero-slide-skyline.jpg";
 
 /**
  * Hero background slider — three photos, autoplay, endless loop, crossfade.
@@ -9,17 +9,17 @@ import skylineSlide from "@/assets/hero-slide-skyline.jpg.asset.json";
  */
 const SLIDES = [
   {
-    src: highwaySlide.url,
+    src: highwaySlide,
     alt: "Highway and bridge construction by Naidu & Co at golden hour",
     label: "Infrastructure & Road Works",
   },
   {
-    src: plansSlide.url,
+    src: plansSlide,
     alt: "Architectural blueprints, house model and helmet on a design desk",
     label: "Approved Home Plans & Design",
   },
   {
-    src: skylineSlide.url,
+    src: skylineSlide,
     alt: "Multi-storey building under construction against a sunset skyline",
     label: "Residential & Commercial Builds",
   },
