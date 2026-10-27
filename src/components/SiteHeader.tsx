@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logoMark from "@/assets/logo-mark.png";
-import logoAsset from "@/assets/logo-header.png.asset.json";
+import logoHeaderUrl from "@/assets/logo-header.png";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -52,7 +52,7 @@ export function SiteHeader() {
           className="flex shrink-0 items-center"
         >
           <img
-            src={logoAsset.url}
+            src={logoHeaderUrl}
             alt="Naidu & Co Private Limited"
             className="h-12 w-auto"
           />
