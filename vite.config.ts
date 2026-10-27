@@ -20,7 +20,10 @@ export default defineConfig({
     // which cannot execute the SSR/server runtime.
     ...(ghPages
       ? {
-          pages: ["/", "/about", "/services", "/projects", "/contact"].map((path) => ({ path })),
+          // Prerender requests use full URLs under the deploy base path.
+          pages: ["/", "/about", "/services", "/projects", "/contact"].map((path) => ({
+            path: `${ghBase}${path === "/" ? "/" : path}`,
+          })),
           prerender: { enabled: true, autoStaticPathsDiscovery: false },
         }
       : {}),
