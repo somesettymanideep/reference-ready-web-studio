@@ -32,14 +32,19 @@ jobs:
 
       - name: Finalize static output
         run: |
-          touch dist/client/.nojekyll
-          cp dist/client/index.html dist/client/404.html
+          # Output folder differs by environment (.output/public on CI, dist/client in Lovable).
+          if [ -f .output/public/index.html ]; then OUT=.output/public; else OUT=dist/client; fi
+          mkdir -p site
+          cp -r "$OUT"/. site/
+          touch site/.nojekyll
+          cp site/index.html site/404.html
+          ls site
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: site
 
   deploy:
     needs: build
