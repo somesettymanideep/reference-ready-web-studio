@@ -19,6 +19,7 @@ export const getRouter = () => {
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     basepath,
+    trailingSlash: isBasePathDeploy ? "always" : "never",
   });
 
   return router;
