@@ -8,8 +8,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // GitHub Pages export mode. GH_PAGES=1 produces a fully static, prerendered
 // build hosted under a sub-path (GH_BASE, defaulting to this repo's path).
-const ghPages = !!process.env.GH_PAGES;
-const ghBase = process.env.GH_BASE ?? "/reference-ready-web-studio";
+const ghPages = !!process.env["GH_PAGES"];
+const ghBase = process.env["GH_BASE"] ?? "/reference-ready-web-studio";
 
 export default defineConfig({
   tanstackStart: {
