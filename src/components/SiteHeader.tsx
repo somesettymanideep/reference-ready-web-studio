@@ -52,7 +52,7 @@ export function SiteHeader() {
           className="flex shrink-0 items-center"
         >
           <img
-            src={logoAsset.url}
+            src={logoHeaderUrl}
             alt="Naidu & Co Private Limited"
             className="h-12 w-auto"
           />
